@@ -16,7 +16,7 @@ var StateMain = {
 		game.physics.enable(this.hero, Phaser.Physics.ARCADE);
 		game.physics.enable(this.ground, Phaser.Physics.ARCADE);
 		this.hero.body.gravity.y = 200;
-		//this.hero.body.collideWorldBounds = true;
+		this.hero.body.collideWorldBounds = true;
 		this.ground.body.immovable = true;
 		game.input.onUp.add(this.mouseUp, this);
 		game.input.onDown.add(this.mouseDown, this);
@@ -39,7 +39,7 @@ var StateMain = {
 	},
 	doJump: function() {
 		this.hero.body.velocity.y = -this.power * 12;
-		this.hero.body.velocity.x = 10;
+		this.hero.body.velocity.x = 50;
 	},
 	update: function() {
 		game.physics.arcade.collide(this.hero, this.ground, this.stopPlayer, null, this);
